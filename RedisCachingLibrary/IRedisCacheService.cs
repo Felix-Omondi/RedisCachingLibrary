@@ -16,7 +16,7 @@
         Task SetDataAsync<T>(string key, T data);
 
         /// <summary>
-        /// Removed a cached item by key.
+        /// Removes a cached item by key.
         /// </summary>
         Task DeleteDataAsync<T>(string key);
     }
