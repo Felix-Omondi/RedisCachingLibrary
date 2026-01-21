@@ -11,7 +11,7 @@
         Task<T> GetDataAsync<T>(string key);
 
         /// <summary>
-        /// Sets a cached item with 5-minute expiration.
+        /// Sets a cached item with 30-minute expiration.
         /// </summary>
         Task SetDataAsync<T>(string key, T data);
 

@@ -58,7 +58,7 @@ namespace RedisCachingLibrary
         {
             var options = new DistributedCacheEntryOptions()
             {
-                AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5)
+                AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(30)
             };
 
             await redis.SetStringAsync(key: key, JsonSerializer.Serialize(data), options: options);
