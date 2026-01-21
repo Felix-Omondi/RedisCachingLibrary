@@ -6,18 +6,26 @@
     public interface IRedisCacheService
     {
         /// <summary>
-        /// Gets a cached item by key.
+        /// Retrieves a cached item of type T by key.
         /// </summary>
-        Task<T> GetDataAsync<T>(string key);
+        /// <typeparam name="T">The type of the cached object.</typeparam>
+        /// <param name="key">The cache key.</param>
+        /// <returns>The deserialized object, or default(T) if not found.</returns>
+        Task<T> GetAsync<T>(string key);
 
         /// <summary>
-        /// Sets a cached item with 30-minute expiration.
+        /// Stores an object in the cache with a 5-minute sliding expiration.
         /// </summary>
-        Task SetDataAsync<T>(string key, T data);
+        /// <typeparam name="T">The type of the object to cache.</typeparam>
+        /// <param name="key">The cache key.</param>
+        /// <param name="data">The object to cache</param>
+        Task SetAsync<T>(string key, T data);
 
         /// <summary>
-        /// Removes a cached item by key.
+        /// Removes an item from the cache by key.
         /// </summary>
-        Task DeleteDataAsync<T>(string key);
+        /// <typeparam name="T">The expected type (unused in removal).</typeparam>
+        /// <param name="key">The cache key to remove.</param>
+        Task RemoveAsync<T>(string key);
     }
 }
