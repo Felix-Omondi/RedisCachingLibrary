@@ -14,7 +14,7 @@
         Task<T> GetAsync<T>(string key);
 
         /// <summary>
-        /// Stores an object in the cache with a 5-minute sliding expiration.
+        /// Stores an object in the cache with a 30-minute sliding expiration.
         /// </summary>
         /// <typeparam name="T">The type of the object to cache.</typeparam>
         /// <param name="key">The cache key.</param>
@@ -24,7 +24,7 @@
         /// <summary>
         /// Removes an item from the cache by key.
         /// </summary>
-        /// <typeparam name="T">The expected type (unused in removal).</typeparam>
+        /// <typeparam name="T">The expected type.</typeparam>
         /// <param name="key">The cache key to remove.</param>
         Task RemoveAsync<T>(string key);
     }
